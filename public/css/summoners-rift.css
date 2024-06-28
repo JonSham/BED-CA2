@@ -1,0 +1,56 @@
+body {
+  background: url("../images/guild.jpg") rgba(0, 0, 0, 0.499);
+  background-blend-mode: multiply;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.scrollable-container {
+  height: 87vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.slide-out {
+  margin-left: 1150px;
+  transition: margin-left 0.3s ease;
+}
+
+#sidePanel {
+  position: fixed;
+
+  z-index: 1000;
+  transition: right 0.3s ease;
+}
+
+#sidePanel.d-none {
+  right: 0;
+}
+
+#backpack {
+  position: fixed;
+  z-index: 1100;
+}
+
+.scrolly {
+  height: 55vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.inventory {
+  z-index: 800;
+}
+
+.inventory-content {
+  background-color: rgb(38, 41, 44);
+}
+
+.bestiary {
+  z-index: 850;
+}
+
+.bestiary-content {
+  background-color: rgb(38, 41, 44);
+}

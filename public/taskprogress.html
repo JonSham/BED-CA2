@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!--External lib-->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+    <!--CSS Link-->
+    <link href="css/taskprogress.css" rel="stylesheet" />
+
+    <title>Task Progress</title>
+  </head>
+  <body class="vh-100 overflow-hidden">
+    <header>
+      <!--Nav Bar-->
+      <nav
+        class="navbar navbar-expand-lg navbar-dark"
+        style="background-color: rgba(21, 22, 24, 0.885)"
+      >
+        <div class="container-fluid">
+          <!--Logo-->
+          <a class="navbar-brand" href="#">
+            <img
+              src="./images/League-of-Legends-Logo.png"
+              alt="Logo"
+              width="160"
+              height="80"
+            />
+          </a>
+          <!--Toggle Btn-->
+          <button
+            class="navbar-toggler shadow-none border-0"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasDarkNavbar"
+            aria-controls="offcanvasDarkNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!--SideBar-->
+          <div
+            class="sidebar offcanvas offcanvas-start"
+            tabindex="-1"
+            id="offcanvasDarkNavbar"
+            aria-labelledby="offcanvasDarkNavbarLabel"
+          >
+            <!--SideBar Header-->
+            <div class="offcanvas-header text-white border-bottom">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+                <a class="navbar-brand" href="#">
+                  <img
+                    src="./images/League-of-Legends-Logo.png"
+                    alt="Logo"
+                    width="160"
+                    height="80"
+                  />
+                </a>
+              </h5>
+              <button
+                type="button"
+                class="btn-close btn-close-white shadow-none"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <!--SideBar Body-->
+            <div
+              class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0"
+            >
+              <ul
+                class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3"
+              >
+                <li class="nav-item mx-2">
+                  <a class="nav-link" aria-current="page" href="./index.html"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="./task.html">Tasks</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="./taskprogress.html"
+                    >Task Progress</a
+                  >
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="./leaderboard.html">Leaderboard</a>
+                </li>
+              </ul>
+              <!--Profile-->
+              <div class="profile" id="profileButton">
+                <div class="btn-group">
+                  <button
+                    type="button"
+                    class="btn btn-secondary dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src=""
+                      alt="Profile Picture"
+                      class="profile-picture"
+                      id="pfpShow"
+                    />
+                    <b id="profileName"></b>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        type="button"
+                        href="./profile.html"
+                      >
+                        Edit Profile
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" type="button" href="./inbox.html"
+                        >Inbox</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <button
+                        class="dropdown-item"
+                        type="button"
+                        id="logoutButton"
+                      >
+                        Logout
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!--Login / Sign up-->
+              <div
+                class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3"
+              >
+                <a href="./login.html" class="login-button" id="loginButton"
+                  >Login</a
+                >
+                <a
+                  href="./register.html"
+                  class="signup-button"
+                  id="registerButton"
+                  >Sign up</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <body>
+      <!--task description-->
+      <div class="scrollable-container">
+        <section class="front-text py-5 text-center container">
+          <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+              <h1 class="fw-light">Task Progress Tracker</h1>
+              <p class="lead text-body-secondary">
+                The task progress tracker serves as a dynamic tool designed to
+                monitor and showcase the accomplishments of champions who have
+                successfully completed eco-friendly tasks. This tracker not only
+                highlights the specific actions taken by these champions but
+                also serves as a source of inspiration, motivating others to
+                emulate their environmentally conscious efforts. By
+                transparently displaying the achievements of these individuals,
+                the tracker cultivates a sense of community and encourages a
+                collective commitment to sustainable practices.
+              </p>
+              <div class="logged">
+                <div class="tiny">
+                  <small class="fw-light" id="addTaskText"
+                    >Finished a task? Add your progress now!</small
+                  >
+                </div>
+                <div class="addTask" id="addTask">
+                  <button
+                    class="taskbttn"
+                    role="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalAddProgress"
+                  >
+                    Add Progress&nbsp;
+                    <img
+                      src="./images/add.png"
+                      alt="add"
+                      width="25"
+                      height="25"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--modal for add progress-->
+        <div
+          class="modal"
+          style="margin-top: 80px"
+          tabindex="-1"
+          role="dialog"
+          id="modalAddProgress"
+        >
+          <div class="modal-dialog" role="document">
+            <div class="modal-content rounded-4 shadow">
+              <div class="modal-header p-5 pb-4 border-bottom-0">
+                <h1 class="fw-bold mb-0 fs-2">Add Task Progress</h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                  onclick="myFunction()"
+                ></button>
+              </div>
+              <hr class="my-4" />
+
+              <div class="modal-body p-5 pt-0">
+                <form class="" id="addProgress">
+                  <div class="form-floating mb-3">
+                    <select
+                      class="form-control rounded-3"
+                      id="taskDone"
+                      aria-label="Task Completed"
+                    ></select>
+                    <label for="taskDone">Task Completed</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control rounded-3"
+                      id="notes"
+                      placeholder="Notes"
+                    />
+                    <label for="notes">Notes</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input
+                      type="date"
+                      class="form-control rounded-3"
+                      id="completion_date"
+                      placeholder="Date of Completion"
+                    />
+                    <label for="completion_date">Date of Completion</label>
+                  </div>
+                  <div
+                    id="warningCard"
+                    class="warning card border-danger mb-1 d-none"
+                  >
+                    <div class="card-body text-danger">
+                      <img
+                        class="war-img"
+                        src="./images/alert.png"
+                        alt="Alert"
+                        width="25"
+                        height="25"
+                      />
+                      <p id="warningText" class="card-text"></p>
+                    </div>
+                  </div>
+                  <button
+                    class="w-100 mb-2 btn btn-lg rounded-3 btn-primary"
+                    type="submit"
+                    style="margin-top: 50px"
+                  >
+                    Add
+                  </button>
+                  <small class="text-body-secondary"
+                    >Keep up the progress!</small
+                  >
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--edit modal-->
+        <div
+          class="editModal modal"
+          tabindex="-1"
+          role="dialog"
+          id="editForm"
+          style="margin-top: 85px"
+        >
+          <div class="modal-dialog" role="document">
+            <div class="modal-content rounded-4 shadow">
+              <div class="modal-header border-bottom-0">
+                <h3 class="modal-title" style="margin-left: 124px">
+                  Edit Task Progress
+                </h3>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body py-0">
+                <!--Form-->
+                <form id="taskForm">
+                  <div class="dones mb-3">
+                    <label for="EditTaskDone">Task Completed</label>
+                    <select
+                      class="doness form-control rounded-3"
+                      id="EditTaskDone"
+                      aria-label="Task Completed"
+                    ></select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="notes" class="form-label">Notes</label>
+                    <textarea class="form-control" id="editNotes"></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="completion_date" class="form-label"
+                      >Date of Completion</label
+                    >
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="editCompletion_date"
+                    />
+                  </div>
+                  <div
+                    id="warningCard2"
+                    class="warning2 card border-danger mt-3 mb-3 d-none"
+                  >
+                    <div class="card-body text-danger">
+                      <img
+                        class="war-img2"
+                        src="./images/alert.png"
+                        alt="Alert"
+                        width="25"
+                        height="25"
+                      />
+                      <p id="warningText2" class="card-text"></p>
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+              <div
+                class="modal-footer d-flex justify-content-center align-items-stretch w-100 gap-2 pb-3 border-top-0"
+              >
+                <button
+                  type="button"
+                  class="btn btn-lg btn-primary"
+                  id="saveEdit"
+                >
+                  Save
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-lg btn-danger"
+                  id="deleteEdit"
+                  data-bs-dismiss="modal"
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Tracker-->
+        <section
+          class="tracker d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center"
+        >
+          <div class="list-group" id="progressList">
+            <!--Start-->
+            <!--end-->
+          </div>
+        </section>
+
+        <!--warning modal-->
+        <div
+          class="modal"
+          tabindex="-1"
+          role="dialog"
+          id="notOwnerWarning"
+          style="margin-top: 85px"
+        >
+          <div class="modal-dialog" role="document">
+            <div class="modal-content rounded-4 shadow">
+              <div class="modal-header border-bottom-0">
+                <h1 class="modal-title fs-5">Hey, you can't do that!</h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body py-0">
+                <p>
+                  Nice attempt, but editing the progress of others is not
+                  allowed!
+                </p>
+              </div>
+              <div
+                class="modal-footer flex-column align-items-stretch w-100 gap-2 pb-3 border-top-0"
+              >
+                <button
+                  type="button"
+                  class="btn btn-lg btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Buffer-->
+        <div class="buffer"></div>
+      </div>
+    </body>
+
+    <footer></footer>
+
+    <!-- ADD JAVASCRIPTS BEFORE BODY ENDTAG -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/queryCmds.js" type="text/javascript"></script>
+    <script src="js/getCurrentURL.js" type="text/javascript"></script>
+    <script src="js/userNavbarToggle.js" type="text/javascript"></script>
+    <script src="js/taskprogress.js" type="text/javascript"></script>
+  </body>
+</html>

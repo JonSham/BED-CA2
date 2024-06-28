@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <!--CSS Link-->
+    <link href="css/shop.css" rel="stylesheet" />
+
+    <title>Shop</title>
+  </head>
+  <body class="vh-100 overflow-hidden">
+    <!--Back Arrow-->
+    <nav
+      aria-label="breadcrumb"
+      style="margin-bottom: -31px; z-index: 1500; position: relative"
+    >
+      <ol class="breadcrumb breadcrumb-chevron p-3 bg-body-tertiary rounded-3">
+        <li class="breadcrumb-item">
+          <a
+            class="link-body-emphasis fw-semibold text-decoration-none"
+            href="./index.html"
+            ><img
+              src="./images/left-chevron.png"
+              alt="Back"
+              width="20"
+              height="20"
+          /></a>
+        </li>
+        <li class="" style="margin-left: 1410px">
+          <!-- Backpack toggle -->
+          <a
+            style="margin-left: -40px; cursor: pointer"
+            onclick="toggleBackpack()"
+          >
+            <img
+              src="./images/down-chevron.png"
+              alt="Section Bar"
+              width="25"
+              height="25"
+              style="margin-top: 1px"
+            />
+          </a>
+          <!-- section-bar toggle -->
+          <a
+            style="margin-left: 30px; cursor: pointer"
+            onclick="toggleSidePanel()"
+          >
+            <img
+              src="./images/compass.png"
+              alt="Fast Travel"
+              width="27"
+              height="27"
+            />
+          </a>
+        </li>
+      </ol>
+    </nav>
+
+    <!--section bar-->
+    <div
+      id="sidePanel"
+      class="d-none d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary"
+      style="width: 380px; margin-left: 1150px"
+    >
+      <hr />
+      <div
+        class="d-flex align-items-center flex-shrink-0 p-3 link-body-emphasis text-decoration-none border-bottom"
+      >
+        <span class="fs-5 fw-semibold" style="margin-top: -15px"
+          >Fast Travel&nbsp;
+          <img
+            src="./images/map.png"
+            alt="Map"
+            height="30"
+            width="34"
+            style="margin-top: -4px"
+        /></span>
+      </div>
+      <div class="list-group list-group-flush border-bottom scrollarea">
+        <div class="scrollable-container">
+          <a
+            href="./summoners-rift.html"
+            class="list-group-item list-group-item-action py-3 lh-sm"
+          >
+            <div
+              class="d-flex w-100 align-items-center justify-content-between"
+            >
+              <strong class="mb-1">Guild Headquarters</strong>
+              <small class="text-body-secondary">Arcanum City</small>
+            </div>
+            <div class="col-10 mb-1 small">
+              The Guild Foundation of Summoners Rift
+            </div>
+          </a>
+          <a
+            href="./shop.html"
+            class="list-group-item list-group-item-action py-3 lh-sm"
+          >
+            <div
+              class="d-flex w-100 align-items-center justify-content-between"
+            >
+              <strong class="mb-1">Emporium of Eldritch Arms</strong>
+              <small class="text-body-secondary">Arcanum Grove</small>
+            </div>
+            <div class="col-10 mb-1 small">
+              Enchanted Arsenal Shop for Champions
+            </div>
+          </a>
+          <a
+            href="./forest.html"
+            class="list-group-item list-group-item-action py-3 lh-sm"
+          >
+            <div
+              class="d-flex w-100 align-items-center justify-content-between"
+            >
+              <strong class="mb-1">Shadowthorn Forest</strong>
+              <small class="text-body-secondary">Abyssal Enclave</small>
+            </div>
+            <div class="col-10 mb-1 small">
+              Haunted Realm of Insidious Beasts
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!--backpack-->
+    <div
+      class="d-none d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary"
+      style="
+        width: 280px;
+        height: 900px;
+        margin-left: 1250px;
+        margin-top: -14px;
+      "
+      id="backpack"
+    >
+      <hr />
+      <div
+        href="/"
+        class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+      >
+        <span class="fs-4"
+          >Backpack&nbsp;
+          <img
+            src="./images/backpack.png"
+            alt="Backpack"
+            height="30"
+            width="30"
+            style="margin-top: -5px"
+        /></span>
+      </div>
+      <hr />
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li>
+          <a
+            onclick="openInventory()"
+            class="nav-link link-body-emphasis"
+            style="cursor: pointer"
+          >
+            <img
+              src="./images/tools.png"
+              alt="Inventory"
+              height="30"
+              width="30"
+              style="margin-top: -2px"
+            />
+            &nbsp;Inventory
+          </a>
+        </li>
+        <li>
+          <a
+            onclick="openBestiary()"
+            class="nav-link link-body-emphasis"
+            style="cursor: pointer"
+          >
+            <img
+              src="./images/dictionary.png"
+              alt="Bestiary"
+              height="30"
+              width="30"
+              style="margin-top: -3px"
+            />
+            &nbsp;Bestiary
+          </a>
+        </li>
+        <hr />
+        <div
+          href="/"
+          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+        >
+          <span class="fs-4"
+            >Stats&nbsp;
+            <img
+              src="./images/shield.png"
+              alt="Stats"
+              height="30"
+              width="30"
+              style="margin-top: -5px"
+          /></span>
+        </div>
+        <hr />
+        <div id="statsList"></div>
+      </ul>
+    </div>
+
+    <!-- inventory -->
+    <div
+      class="inventory d-none"
+      id="inventory"
+      style="margin-top: 90px; margin-left: 40px; position: relative"
+    >
+      <div role="document">
+        <div class="inventory-content rounded-4 shadow" style="width: 1440px">
+          <div
+            class="inventory-header p-5 pb-4 border-bottom-0 d-flex align-items-center justify-content-between"
+          >
+            <h1 class="fw-bold mb-0 fs-2">Inventory</h1>
+            <button
+              type="button"
+              class="btn-close"
+              aria-label="Close"
+              onclick="closeInventory()"
+            ></button>
+          </div>
+
+          <div class="inventory-body p-5 pt-0">
+            <div class="scrolly">
+              <!--Weapons-->
+              <h2 style="margin-top: 50px; margin-bottom: 20px">Weapons:</h2>
+              <div
+                class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"
+                id="weaponList"
+              ></div>
+              <!--Armor-->
+              <h2 style="margin-top: 50px; margin-bottom: 20px">Armor:</h2>
+              <div
+                class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"
+                id="armorList"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- bestiary -->
+    <div
+      class="bestiary d-none"
+      id="bestiary"
+      style="margin-top: 90px; margin-left: 40px; position: relative"
+    >
+      <div role="document">
+        <div class="bestiary-content rounded-4 shadow" style="width: 1440px">
+          <div
+            class="bestiary-header p-5 pb-4 border-bottom-0 d-flex align-items-center justify-content-between"
+          >
+            <h1 class="fw-bold mb-0 fs-2" style="margin-bottom: 25px">
+              Bestiary
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              aria-label="Close"
+              onclick="closeBestiary()"
+            ></button>
+          </div>
+
+          <div class="bestiary-body p-5 pt-0">
+            <div class="scrolly">
+              <h3 style="margin-left: 23px; margin-top: 25px">
+                Location: <b>Shadowthorn Forest</b>
+              </h3>
+              <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+                <!--start-->
+                <div
+                  class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden"
+                  style="width: 570px; margin-top: 20px"
+                >
+                  <div class="my-3 p-3">
+                    <h2 class="display-5">Raptor</h2>
+                    <p class="lead">
+                      The Raptor, a swift, cunning and agile apex predator,
+                      gracefully navigates the dense foliage with razor-sharp
+                      talons and keen instincts, making it a formidable force in
+                      the untamed wilderness of Summoners Rift.
+                    </p>
+                  </div>
+                  <div
+                    class="bg-body shadow-sm mx-auto"
+                    style="
+                      width: 80%;
+                      height: 300px;
+                      border-radius: 21px 21px 0 0;
+                    "
+                  >
+                    <img
+                      src="./images/Crim.jpg"
+                      height="300"
+                      width="80%"
+                      alt="Raptor"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden"
+                  style="width: 570px; margin-top: 20px"
+                >
+                  <div class="my-3 p-3">
+                    <h2 class="display-5">Gromp</h2>
+                    <p class="lead">
+                      Gromp, the murky behemoth lurking in the swamp's depths,
+                      possesses formidable strength, emanating an aura of primal
+                      resilience as it guards its territory with a potent
+                      combination of brawn and cunningness.
+                    </p>
+                  </div>
+                  <div
+                    class="bg-body shadow-sm mx-auto"
+                    style="
+                      width: 80%;
+                      height: 300px;
+                      border-radius: 21px 21px 0 0;
+                    "
+                  >
+                    <img
+                      src="./images/gromp.jpg"
+                      height="300"
+                      width="80%"
+                      alt="Gromp"
+                    />
+                  </div>
+                </div>
+                <!--end-->
+              </div>
+              <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+                <!--start-->
+                <div
+                  class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden"
+                  style="width: 570px; margin-top: 20px"
+                >
+                  <div class="my-3 p-3">
+                    <h2 class="display-5">Murk Wolf</h2>
+                    <p class="lead">
+                      The Murk Wolf, a mysterious and shadowy entity, prowls the
+                      depths of Summoners Rift with glowing eyes and stealthy
+                      movements, embodying an enigmatic presence that strikes
+                      fear into the hearts of those who dare to cross its path.
+                    </p>
+                  </div>
+                  <div
+                    class="bg-body shadow-sm mx-auto"
+                    style="
+                      width: 80%;
+                      height: 300px;
+                      border-radius: 21px 21px 0 0;
+                    "
+                  >
+                    <img
+                      src="./images/murk.jpg"
+                      height="300"
+                      width="80%"
+                      alt="Murk Wolf"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden"
+                  style="width: 570px; margin-top: 20px"
+                >
+                  <div class="my-3 p-3">
+                    <h2 class="display-5">Mini Krug</h2>
+                    <p class="lead">
+                      The Mini Krug, a corrupt stony beast, possesses an
+                      impenetrable and resilient structure, its stone-hard
+                      exterior serving as an impervious defense against attacks,
+                      making it a formidable adversary in the corrupted depths
+                      of Summoners Rift.
+                    </p>
+                  </div>
+                  <div
+                    class="bg-body shadow-sm mx-auto"
+                    style="
+                      width: 80%;
+                      height: 300px;
+                      border-radius: 21px 21px 0 0;
+                    "
+                  >
+                    <img
+                      src="./images/krug.jpg"
+                      height="300"
+                      width="80%"
+                      alt="Mini Krug"
+                    />
+                  </div>
+                </div>
+                <!--end-->
+              </div>
+              <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+                <!--start-->
+                <div
+                  class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden"
+                  style="width: 570px; margin-top: 20px"
+                >
+                  <div class="my-3 p-3">
+                    <h2 class="display-5">Blue Sentinel</h2>
+                    <p class="lead">
+                      The malevolent Blue Sentinel, a towering embodiment of
+                      corrupted power, guards the heart of Summoners Rift with
+                      an icy aura, freezing the very essence of the once serene
+                      landscape it now dominates.
+                    </p>
+                  </div>
+                  <div
+                    class="bg-body shadow-sm mx-auto"
+                    style="
+                      width: 80%;
+                      height: 300px;
+                      border-radius: 21px 21px 0 0;
+                    "
+                  >
+                    <img
+                      src="./images/blue.jpg"
+                      height="300"
+                      width="80%"
+                      alt="Blue Sentinel"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden"
+                  style="width: 570px; margin-top: 20px"
+                >
+                  <div class="my-3 p-3">
+                    <h2 class="display-5">Crimson Raptor</h2>
+                    <p class="lead">
+                      The malevolent Crimson Raptor, crowned king of its raptor
+                      horde, commands with fiery eyes and a voracious hunger,
+                      instilling terror as it leads its minions through
+                      Summoners Rift's corrupted domains.
+                    </p>
+                  </div>
+                  <div
+                    class="bg-body shadow-sm mx-auto"
+                    style="
+                      width: 80%;
+                      height: 300px;
+                      border-radius: 21px 21px 0 0;
+                    "
+                  >
+                    <img
+                      src="./images/raptor.jpg"
+                      height="300"
+                      width="80%"
+                      alt="Crimson Raptor"
+                    />
+                  </div>
+                </div>
+                <!--end-->
+              </div>
+              <h3
+                style="
+                  text-align: center;
+                  margin-right: 200px;
+                  margin-top: 40px;
+                "
+              >
+                Uncharted realms hide undiscovered creatures awaiting encounter
+                ...
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--req not met modal-->
+    <div
+      class="modal"
+      tabindex="-1"
+      role="dialog"
+      id="skillIssue"
+      style="margin-top: 85px"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content rounded-4 shadow">
+          <div class="modal-header border-bottom-0">
+            <h1 class="modal-title fs-5">Skill Issue</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body py-0">
+            <p>You do not meet the requirements to buy this item.</p>
+          </div>
+          <div
+            class="modal-footer flex-column align-items-stretch w-100 gap-2 pb-3 border-top-0"
+          >
+            <button
+              type="button"
+              class="btn btn-lg btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--content-->
+    <div class="scrollz">
+      <section>
+        <div class="p-5 text-center rounded-3" style="margin-top: 75px">
+          <h1 class="text-body-emphasis">Emporium of Eldritch Arms</h1>
+          <p class="col-lg-8 mx-auto fs-5 text-muted" style="margin-top: 40px">
+            Welcome, noble champion, to the Emporium of Eldritch Arms, where I,
+            Thalara, the guardian of this sacred expanse on the outskirts of
+            Arcanum Grove, present to you a curated collection of peerless
+            weapons and armor. Crafted with unparalleled artistry and infused
+            with the very essence of the enchanting grove, these high-quality
+            artifacts transcend the mundane, each piece a masterpiece designed
+            to be an extension of your valor. Feel the resonance of power as you
+            don these meticulously forged armaments, their enchantments echoing
+            the tales of countless triumphs etched into the fabric of Summoners
+            Rift. Here, amidst the iridescent glow of arcane craftsmanship, you
+            shall find not mere tools, but companions on your journey – gleaming
+            blades and resilient armor that embody the pinnacle of excellence,
+            destined to be wielded by champions who dare to confront the
+            encroaching darkness. Rest assured, these are the finest goods in
+            the whole of Arcanum, chosen with care and devotion. May you select
+            the right equipment for your journey and emerge victorious against
+            the malevolent forces that threaten our cherished realm.
+          </p>
+          <div class="d-inline-flex gap-2 mb-5"></div>
+        </div>
+      </section>
+      <section>
+        <div class="shop-box text-secondary px-4 py-5">
+          <h1
+            style="
+              margin-bottom: 70px;
+              color: rgb(173, 173, 173);
+              margin-left: 500px;
+            "
+          >
+            Weapon Section
+          </h1>
+          <div
+            class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"
+            id="weaponShop"
+          ></div>
+        </div>
+      </section>
+      <div class="buffer"></div>
+      <section>
+        <div class="shop-box text-secondary px-4 py-5">
+          <h1
+            style="
+              margin-bottom: 70px;
+              color: rgb(173, 173, 173);
+              margin-left: 500px;
+            "
+          >
+            Armor Section
+          </h1>
+          <div
+            class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"
+            id="armorShop"
+          ></div>
+        </div>
+      </section>
+      <div class="buffer"></div>
+    </div>
+
+    <footer></footer>
+
+    <!-- ADD JAVASCRIPTS BEFORE BODY ENDTAG -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/queryCmds.js" type="text/javascript"></script>
+    <script src="js/getCurrentURL.js" type="text/javascript"></script>
+    <script src="js/summoners-rift.js" type="text/javascript"></script>
+    <script src="js/shop.js" type="text/javascript"></script>
+  </body>
+</html>

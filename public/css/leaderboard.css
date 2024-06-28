@@ -1,0 +1,74 @@
+body {
+  background: url("../images/about.jpg") rgba(0, 0, 0, 0.577);
+  background-blend-mode: multiply;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 991px) {
+  .sidebar {
+    background-color: rgba(45, 41, 41, 0.144);
+    backdrop-filter: blur(10px);
+  }
+}
+
+.login-button {
+  background-color: rgb(29, 152, 109);
+  color: #ffffff;
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 60px;
+  text-decoration: none;
+  transition: 0.3s background-color;
+}
+
+.login-button:hover {
+  background-color: rgb(37, 226, 160);
+}
+
+.signup-button {
+  background-color: rgb(32, 61, 124);
+  color: #ffffff;
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 60px;
+  text-decoration: none;
+  transition: 0.3s background-color;
+}
+
+.signup-button:hover {
+  background-color: rgb(34, 94, 224);
+}
+
+.nav-item a {
+  position: relative;
+}
+
+.nav-item a::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  transition: 0.3s;
+}
+
+.nav-item a:hover::before {
+  width: 100%;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin-left: 10px; /* Adjust the left margin as needed */
+}
+
+.profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Make the profile picture round */
+  margin-right: 10px;
+}

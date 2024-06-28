@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <!--CSS Link-->
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/color.css" rel="stylesheet" />
+
+    <title>Home</title>
+  </head>
+  <body class="vh-100 overflow-hidden">
+    <header>
+      <!--Nav Bar-->
+      <nav
+        class="navbar navbar-expand-lg navbar-dark"
+        style="background-color: rgba(21, 22, 24, 0.885)"
+      >
+        <div class="container-fluid">
+          <!--Logo-->
+          <a class="navbar-brand" href="#">
+            <img
+              src="./images/League-of-Legends-Logo.png"
+              alt="Logo"
+              width="160"
+              height="80"
+            />
+          </a>
+          <!--Toggle Btn-->
+          <button
+            class="navbar-toggler shadow-none border-0"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasDarkNavbar"
+            aria-controls="offcanvasDarkNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!--SideBar-->
+          <div
+            class="sidebar offcanvas offcanvas-start"
+            tabindex="-1"
+            id="offcanvasDarkNavbar"
+            aria-labelledby="offcanvasDarkNavbarLabel"
+          >
+            <!--SideBar Header-->
+            <div class="offcanvas-header text-white border-bottom">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+                <a class="navbar-brand" href="#">
+                  <img
+                    src="./images/League-of-Legends-Logo.png"
+                    alt="Logo"
+                    width="160"
+                    height="80"
+                  />
+                </a>
+              </h5>
+              <button
+                type="button"
+                class="btn-close btn-close-white shadow-none"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <!--SideBar Body-->
+            <div
+              class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0"
+            >
+              <ul
+                class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3"
+              >
+                <li class="nav-item mx-2">
+                  <a class="nav-link" aria-current="page" href="./index.html"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="./task.html">Tasks</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="./taskprogress.html"
+                    >Task Progress</a
+                  >
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="./leaderboard.html">Leaderboard</a>
+                </li>
+              </ul>
+              <!--Profile-->
+              <div class="profile" id="profileButton">
+                <div class="btn-group">
+                  <button
+                    type="button"
+                    class="btn btn-secondary dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src=""
+                      alt="Profile Picture"
+                      class="profile-picture"
+                      id="pfpShow"
+                    />
+                    <b id="profileName"></b>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        type="button"
+                        href="./profile.html"
+                      >
+                        Edit Profile
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" type="button" href="./inbox.html"
+                        >Inbox</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <button
+                        class="dropdown-item"
+                        type="button"
+                        id="logoutButton"
+                      >
+                        Logout
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!--Login / Sign up-->
+              <div
+                class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3"
+              >
+                <a href="./login.html" class="login-button" id="loginButton"
+                  >Login</a
+                >
+                <a
+                  href="./register.html"
+                  class="signup-button"
+                  id="registerButton"
+                  >Sign up</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div
+      class="p-5 text-center rounded-3"
+      style="background-color: rgba(36, 40, 45, 0.522)"
+    >
+      <svg
+        class="bi mt-4 mb-3"
+        style="color: var(--bs-indigo)"
+        width="100"
+        height="100"
+      >
+        <use xlink:href="#bootstrap"></use>
+      </svg>
+      <h1 class="text-body-emphasis">Ready to jump into Summoner's Rift?</h1>
+      <p class="col-lg-8 mx-auto fs-5 text-muted">
+        Embark on an epic adventure in Legends of Legends, Summoner's Rift, a
+        thrilling world where champions engage in fierce battles against a
+        diverse array of mythical beasts. Conquer challenges, earn experience
+        points (XP), and accumulate gold by defeating these beasts. Use your
+        resources strategically to equip your champion with powerful weapons and
+        resilient armor, enhancing their capabilities to face progressively
+        tougher adversaries in different biomes. The ultimate goal? Be the first
+        to vanquish the legendary Elder Dragon. This mythical beast serves as
+        the pinnacle challenge, testing the strength, skill, and strategic
+        prowess of champions. Forge alliances, compete with friends, and immerse
+        yourself in a dynamic gaming universe where your decisions shape the
+        destiny of your champion. Will you rise to the occasion, overcome
+        mythical beasts, and emerge victorious as the legendary Elder Dragon
+        slayer in Summoner's Rift? The journey awaits! Step into the arena and
+        make your mark in this captivating world!
+      </p>
+      <div class="d-inline-flex gap-2 mb-5">
+        <button
+          onclick="enterSummonersRift()"
+          class="button-49"
+          role="button"
+          id="riftButton"
+        >
+          Enter Summoner's Rift
+        </button>
+      </div>
+    </div>
+    <footer></footer>
+
+    <!-- ADD JAVASCRIPTS BEFORE BODY ENDTAG -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/queryCmds.js" type="text/javascript"></script>
+    <script src="js/getCurrentURL.js" type="text/javascript"></script>
+    <script src="js/userNavbarToggle.js" type="text/javascript"></script>
+    <script src="js/index.js" type="text/javascript"></script>
+  </body>
+</html>

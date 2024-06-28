@@ -1,0 +1,163 @@
+body {
+  background: url("../images/profile.jpg") rgba(0, 0, 0, 0.564);
+  background-blend-mode: multiply;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: rgb(255, 255, 255);
+}
+
+.box {
+  width: 700px;
+  height: 370px;
+  padding: 2rem 1rem;
+  margin: 50px auto;
+  margin-bottom: 2rem;
+  background-color: #232426;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.614);
+}
+
+.editable-form {
+  max-width: 300px;
+  margin: 20px auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  margin-right: 260px;
+}
+
+input {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+.profile-picture {
+  max-width: 140px;
+  border-radius: 50%;
+}
+
+.pfp {
+  margin-top: 1.5rem;
+  margin-left: 65px;
+}
+
+.editable-form {
+  margin-top: -14rem;
+}
+
+.btn {
+  align-items: center;
+  background-image: linear-gradient(135deg, #1e0989 40%, #269dff);
+  border: 0;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-family: "Codec cold", sans-serif;
+  font-size: 10px;
+  font-weight: 750;
+  height: 34px;
+  justify-content: center;
+  letter-spacing: 0.4px;
+  line-height: 1;
+  max-width: 100%;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 3px;
+  text-decoration: none;
+  text-transform: uppercase;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.bttn:not(:disabled):hover,
+.bttn:not(:disabled):focus {
+  outline: 0;
+  background-image: linear-gradient(135deg, #0e4aa4 40%, #00f2ff);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+}
+
+.bttn:disabled {
+  filter: saturate(0.2) opacity(0.5);
+  -webkit-filter: saturate(0.2) opacity(0.5);
+  cursor: not-allowed;
+}
+
+button {
+  background-image: linear-gradient(135deg, #1e0989 40%, #269dff);
+  border-radius: 10px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 5px 10px;
+  text-align: center;
+  transition: 200ms;
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  font-size: 14px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 80px;
+}
+
+button:not(:disabled):hover,
+button:not(:disabled):focus {
+  outline: 0;
+  background-image: linear-gradient(135deg, #0e4aa4 40%, #00f2ff);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+}
+
+button:disabled {
+  filter: saturate(0.2) opacity(0.5);
+  -webkit-filter: saturate(0.2) opacity(0.5);
+  cursor: not-allowed;
+}
+
+.scrollable-container {
+  height: 20vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.selected-card {
+  border: 4px solid #003cff; /*border color for the selected state */
+  box-shadow: 0 0 15px rgba(0, 106, 255, 0.5); /*box shadow*/
+  box-sizing: border-box;
+}
+
+/* effect to light up the border */
+.cards:hover {
+  border: 4px solid #003cff;
+}
+
+p {
+  font-size: 15px;
+  font-weight: 600;
+  color: #fdfdfe;
+  text-shadow: 0px 0px 2px #8ab8ce, 0px 0px 5px #a8b0e4, 0px 0px 5px #b5aeeb,
+    0px 0px 10px #adcbe8;
+}

@@ -1,0 +1,167 @@
+body {
+  background: url("../images/task3.jpg") rgba(0, 0, 0, 0.751);
+  background-blend-mode: multiply;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 991px) {
+  .sidebar {
+    background-color: rgba(45, 41, 41, 0.144);
+    backdrop-filter: blur(10px);
+  }
+}
+
+.login-button {
+  background-color: rgb(29, 152, 109);
+  color: #ffffff;
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 60px;
+  text-decoration: none;
+  transition: 0.3s background-color;
+}
+
+.login-button:hover {
+  background-color: rgb(37, 226, 160);
+}
+
+.signup-button {
+  background-color: rgb(32, 61, 124);
+  color: #ffffff;
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 60px;
+  text-decoration: none;
+  transition: 0.3s background-color;
+}
+
+.signup-button:hover {
+  background-color: rgb(34, 94, 224);
+}
+
+.nav-item a {
+  position: relative;
+}
+
+.nav-item a::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  transition: 0.3s;
+}
+
+.nav-item a:hover::before {
+  width: 100%;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.front-text {
+  margin-top: -15px;
+  margin-bottom: -5px;
+}
+
+.scrollable-container {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.buffer {
+  margin-bottom: 210px;
+}
+
+.card-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.points {
+  margin-bottom: 20px;
+}
+
+.card-body {
+  height: 260px;
+}
+
+.addTask {
+  margin-top: 35px;
+}
+
+/* task bttn */
+.taskbttn {
+  --b: 3px;
+  --s: 0.45em;
+  --color: #d5d5d5;
+
+  padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background: conic-gradient(
+      from 90deg at var(--b) var(--b),
+      #c7c7c700 90deg,
+      var(--color) 0
+    )
+    var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
+    calc(100% - var(--b) - 2 * var(--_p));
+  transition: 0.3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: 0.6em;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.taskbttn:hover,
+.taskbttn:focus-visible {
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: 0.05em;
+}
+
+.taskbttn:active {
+  background: var(--color);
+  color: #fff;
+}
+
+.warning {
+  height: 90px;
+  align-items: center;
+}
+
+.war-img {
+  margin-left: 64px;
+}
+
+.editModal {
+  margin-top: 90px;
+}
+
+.warning2 {
+  height: 90px;
+  align-items: center;
+}
+
+.war-img2 {
+  margin-left: 64px;
+}
